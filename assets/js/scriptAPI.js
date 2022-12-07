@@ -13,6 +13,8 @@ function displayMovieInfo() {
 
   // https://www.omdbapi.com/?t=shrek&apikey=trilogy
 
+
+
   // create a call to my api targeting the specific movie adding it to the URL and displaying the movie data (ajax is same as fetch)
   $.ajax({
     url: queryURL,

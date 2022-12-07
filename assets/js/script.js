@@ -15,13 +15,31 @@ function displayChosenCity() {
     method: "GET"
   }).then(function(response) {
     console.log(response);
-    // return response.json();
-  })
+    return response.json();
+  }).then(function(data) {
 
+    var temperature = data.main.temp;
+    
+    console.log(temperature);
+    
+    var windSpeed = data.wind.speed;
+    
+    console.log(windSpeed);
+    
+    var humidity = data.main.humidity;
+    
+    console.log(humidity);
+
+  })
+  
 };
 
-// function renderCards() {
-// }
+function renderCards() {
+
+  $('#feature-view').empty();
+
+  $('week-view')
+}
 
 $('#search-btn').on('click', function(event) {
   event.preventDefault();

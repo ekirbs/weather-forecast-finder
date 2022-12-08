@@ -33,6 +33,10 @@ init();
 
 function displayChosenCity(event) {  
   event.preventDefault();
+
+  $("#feature-spot").empty();
+    
+  $("#weather-spot").empty();
   
   var cityName = $("#search-input").val().trim();
   var apiURL = `https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${apiKey}&units=${units}&lang=${lang}`;
@@ -45,25 +49,38 @@ function displayChosenCity(event) {
     .then(function (data) {
       // console.log(data)
 
-      var featureCard = $("<div class='feature-card'>");
+      // <div class="card" style="width: 18rem;">
+      //   <img src="..." class="card-img-top" alt="...">
+      //   <div class="card-body">
+      //     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      //   </div>
+      // </div>
+
+      var featureCard = $("<div class='card feature-card col-12 col-md-9'>");
 
       var dateDisplay = $('<h1>').text((dayjs()).format('D/M/YYYY'));    
       featureCard.append(dateDisplay);
 
+      var featureImg = $('<img src="./assets/images/sunny-day.png" class="card-img-top" alt="Shining sun icon.">')
+      featureCard.append(featureImg);
+
+      var featureBody = $('<div class="card-body">')
+      featureCard.append(featureBody);
+
       var temperature = data.list[0].main.temp;
       console.log(temperature);
-      var tempDisplay = $('<p>').text(`Temp: ${temperature}`);
-      featureCard.append(tempDisplay);
+      var tempDisplay = $('<p class="card-text">').text(`Temp: ${temperature}`);
+      featureBody.append(tempDisplay);
 
       var windSpeed = data.list[0].wind.speed;
       console.log(windSpeed);
-      var windDisplay = $('<p>').text(`Wind Speed: ${windSpeed}`);
-      featureCard.append(windDisplay);
+      var windDisplay = $('<p class="card-text">').text(`Wind Speed: ${windSpeed}`);
+      featureBody.append(windDisplay);
 
       var humidity = data.list[0].main.humidity;
       console.log(humidity);
-      var humidDisplay = $('<p>').text(`Humidity: ${humidity}`);
-      featureCard.append(humidDisplay);
+      var humidDisplay = $('<p class="card-text">').text(`Humidity: ${humidity}`);
+      featureBody.append(humidDisplay);
 
       $('#feature-spot').prepend(featureCard);
 
@@ -74,25 +91,31 @@ function displayChosenCity(event) {
         // var dayCounter = 0;
         // dayCounter ++;
 
-        var weatherCard = $("<div class='weather-card'>");
+        var weatherCard = $("<div class='card weather-card col-12 col-md-3'>");
           
-        var dateDisplay = $('<h1>').text((dayjs()).add(i + 1, 'day').format('D/M/YYYY'));          
+        var dateDisplay = $('<h1>').text((dayjs()).add(i + 1, 'day').format('D/M/YYYY'));
         weatherCard.append(dateDisplay);
+
+        var weatherImg = $('<img src="./assets/images/rainy-day.png" class="card-img-top" alt="Shining sun icon.">')
+        weatherCard.append(weatherImg);
+
+        var weatherBody = $('<div class="card-body">')
+        weatherCard.append(weatherBody);
           
         var temperature = data.list[day].main.temp;          
         console.log(temperature);          
         var tempDisplay = $('<p>').text(`Temp: ${temperature}`);          
-        weatherCard.append(tempDisplay);
+        weatherBody.append(tempDisplay);
           
         var windSpeed = data.list[day].wind.speed;          
         console.log(windSpeed);          
         var windDisplay = $('<p>').text(`Wind Speed: ${windSpeed}`);          
-        weatherCard.append(windDisplay);
+        weatherBody.append(windDisplay);
           
         var humidity = data.list[day].main.humidity;          
         console.log(humidity);          
         var humidDisplay = $('<p>').text(`Humidity: ${humidity}`);          
-        weatherCard.append(humidDisplay);
+        weatherBody.append(humidDisplay);
           
         $('#weather-spot').append(weatherCard);
           
@@ -101,9 +124,6 @@ function displayChosenCity(event) {
 };
     
 function renderHistory() {
-  $("#feature-spot").empty();
-    
-  $("#weather-spot").empty();
     
   $('#history-spot').empty();
     

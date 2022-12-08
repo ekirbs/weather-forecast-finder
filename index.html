@@ -19,12 +19,43 @@
       <h1 class="display-3">Weather Forecast Finder</h1>
       <p class="lead">A simple calendar app for scheduling your work day</p>
       <p id="currentDay" class="lead"></p>
+      <!-- change text and link time -->
     </header>
 
     <figure></figure>
+    <!-- add figure  -->
+    <div class="row">
+      <form class=" ms-3 mb-3 col-12 col-md-4">
+        <div>
+          <h1>City Search</h1>
+          <label for="search-input" class="form-label">Search for a City:</label>
+          <input type="text" class="form-control" id="search-input" />
+        </div>
+        <button type="submit" class="btn btn-primary" id="search-btn" >Submit</button>
+      </form>
 
-    <!-- <div class="row"> -->
-      <!-- <div class="row"> -->
+      <div class="container">
+        <!-- all mysearch buttons will render here -->
+        <div id="feature-spot"></div>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="container">
+        <!-- all mysearch buttons will render here -->
+        <div id="weather-spot"></div>
+
+      </div>
+    </div>
+
+    <div class="container">
+      <!-- all mysearch buttons will render here -->
+      <div id="history-spot"></div>
+
+    </div>
+
+    <!-- <div class="row">
+      <div class="row">
         <form class=" ms-3 mb-3 col-12 col-md-4">
           <div>
             <label for="search-input" class="form-label">Search for a City:</label>
@@ -40,11 +71,11 @@
             <li class="list-group-item">Wind Speed</li>
             <li class="list-group-item">Humidity</li>
           </ul>
-        </div>
+        </div> -->
       <!-- </div> -->
     <!-- </div> -->
 
-    <div class="card-container float-right">
+    <!-- <div class="card-container float-right">
       <div class="row">
         <div class="card col-12 col-md-2 float-right monday">
           <div class="card-header">Monday</div>
@@ -91,7 +122,7 @@
           </ul>
         </div>
       </div>
-    </div>
+    </div> -->
 
     <!-- </div> -->
 
@@ -100,6 +131,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js" integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js" integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U=" crossorigin="anonymous"></script>
     <script src="./assets/js/script.js"></script>
 
   </body>

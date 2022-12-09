@@ -17,15 +17,86 @@
     <!-- HEADER & TIME DISPLAY -->
     <header class="p-5 mb-4 border-5 border-bottom border-dark text-center">
       <h1 class="display-3">Weather Forecast Finder</h1>
-      <p class="lead">A simple calendar app for scheduling your work day</p>
+      <p class="lead">A simple weather app for checking the weather forecast in a city.</p>
       <p id="currentDay" class="lead"></p>
       <!-- change text and link time -->
     </header>
 
-    <figure></figure>
-    <!-- add figure  -->
+    <figure>
+      <img src="./assets/images/sunset-art-background.jpg" alt="Art of sun setting in a valley."/>
+    </figure>
+
+    <!-- <main class="main-content"> -->
+
+      <!-- ABOUT ME SECTION -->
+      <!-- <section class="section-label about-me-header">
+        <form>
+          <div>
+            <h1>City Search</h1>
+            <label for="search-input" class="form-label">Search for a City:</label>
+            <input type="text" class="form-control" id="search-input" />
+          </div>
+          <button type="submit" class="btn btn-primary" id="search-btn" >Submit</button>
+        </form>
+      </section>
+
+      <section id="about-me" class="about-me-section">
+        <div class="container col-9">
+          <div id="feature-spot"></div>
+        </div>    
+      </section> -->
+
+      <!-- PROJECTS SECTION -->
+      <!-- <section class="section-label projects-header">
+        <div class="container col-3">
+          <div id="history-spot"></div>
+        </div>
+      </section>
+
+      <section id="sample-work" class="projects-section">
+        <article class="card card-main zoom">
+          <div class="container col-9">
+            <div id="feature-spot"></div>
+          </div>    
+        </article>
+
+        <article class="card card-alt zoom">
+          <div class="grid-container col-9">
+            <div id="weather-spot"></div>
+          </div>
+        </article>
+
+        <article class="card card-alt zoom">
+          
+        </article>
+
+        <article class="card card-alt zoom">
+          
+        </article>
+
+        <article class="card card-alt zoom">
+         
+        </article>
+
+        <article class="card card-alt zoom">
+          
+        </article>
+
+      </section> -->
+
+      <!-- CONTACT ME SECTION -->
+      <!-- <section class="section-label contact-me-header">
+        <h2>Contact Me</h2>
+      </section>
+
+      <section id="contact-me" class="contact-me-section">
+        
+      </section>
+    </main> -->
+
     <div class="row">
-      <form class=" ms-3 mb-3 col-12 col-md-3">
+
+      <form class=" ms-3 mb-3 col-3">
         <div>
           <h1>City Search</h1>
           <label for="search-input" class="form-label">Search for a City:</label>
@@ -34,26 +105,24 @@
         <button type="submit" class="btn btn-primary" id="search-btn" >Submit</button>
       </form>
 
-      <div class="container">
-        <!-- all mysearch buttons will render here -->
+      <div class="container col-9">
         <div id="feature-spot"></div>
-
       </div>
+
     </div>
 
     <div class="row">
-      <div class="container">
-        <!-- all mysearch buttons will render here -->
-        <div id="weather-spot"></div>
 
+      <div class="container col-3">
+        <div id="history-spot"></div>
       </div>
+
+      <div class="grid-container col-9">
+        <div id="weather-spot"></div>
+      </div>
+
     </div>
 
-    <div class="container">
-      <!-- all mysearch buttons will render here -->
-      <div id="history-spot"></div>
-
-    </div>
 
     <!-- <div class="row">
       <div class="row">
@@ -135,6 +204,6 @@
     <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js" integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js" integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U=" crossorigin="anonymous"></script>
     <script src="./assets/js/script.js"></script>
-
+    
   </body>
 </html>

@@ -70,9 +70,9 @@ figure img {
   overflow: hidden;
 }
 
-.card a {
+/* .card a {
   opacity: 75%;
-}
+} */
 
 .card-main {
   width: 0;
@@ -80,7 +80,7 @@ figure img {
   margin: 2px;
   min-width: 100%;
   min-height: 100%;
-  grid-area: 1 / 1 / span 1 / span 3;
+  /* grid-area: 1 / 1 / span 1 / span 3; */
 }
 
 .card-alt {
@@ -91,7 +91,7 @@ figure img {
   min-height: 100%;
 }
 
-.img-text {
+/* .img-text {
   position: absolute;
   bottom: 0;
   right: 0;
@@ -99,11 +99,11 @@ figure img {
   color: var(--dark-highlight);
   flex: 1 1 50%;
   padding: 2px;
-}
+} */
 
-a:hover {
+/* a:hover {
   opacity: 100%;
-}
+} */
 
 .zoom {
   transition: transform 0.2s;
@@ -125,17 +125,17 @@ a:hover {
   max-width: 75px;
 }
 
-.weather-card {
+/* .weather-card {
   width: 1000px;
-}
+} */
 
-.container {
+/* .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
+} */
 
-.grid-container {
+/* .grid-container {
   display: grid;
   column-gap: 10px;
-}
+} */

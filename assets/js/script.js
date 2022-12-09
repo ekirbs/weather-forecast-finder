@@ -31,8 +31,9 @@ function displayChosenCity(event) {
     return response.json();
   })
   .then(function (data) {
+    console.log(data);
     
-    var featureCard = $("<div class='card feature-card col-12 col-md-9'>");
+    var featureCard = $("<div class='card feature-card'>");
       
     var dateDisplay = $('<h1>').text((dayjs()).format('D/M/YYYY'));    
     featureCard.append(dateDisplay);
@@ -60,8 +61,12 @@ function displayChosenCity(event) {
     for (var i = 0; i < 5; i += 1) {
         
       var day = i * 8;
-        
-      var weatherCard = $("<div class='card weather-card'>");
+
+      var weatherArticle = $('<article class="card card-alt zoom">');
+
+      var weatherDiv = $('<div class="container weather-spot">');
+
+      var weatherCard = $("<div class='weather-card'>");
         
       var dateDisplay = $('<h1>').text((dayjs()).add(i + 1, 'day').format('D/M/YYYY'));
       weatherCard.append(dateDisplay);
@@ -84,7 +89,9 @@ function displayChosenCity(event) {
       var humidDisplay = $('<p>').text(`Humidity: ${humidity}`);          
       weatherBody.append(humidDisplay);
         
-      $('#weather-spot').append(weatherCard);
+      $('.weather-spot').append(weatherCard);
+      $('.card-alt').append(weatherDiv)
+      $('#sample-work').append(weatherArticle);
         
     }        
   });      
@@ -100,7 +107,7 @@ function renderHistory() {
       
     var histButton = $('<button class="hist-btn btn btn-outline-dark">');
       
-    histButton.addClass('hist-btn');
+    histButton.addClass('hist-btn search-btn');
       
     histButton.attr('data-name', cities[i]);
       
@@ -109,7 +116,7 @@ function renderHistory() {
     $('#history-spot').append(histButton);
       
   }
-}
+};
       
 $('#search-btn').on('click', function (event) {
         
@@ -141,4 +148,4 @@ $('#search-btn').on('click', function (event) {
   renderHistory();
 })
 
-$(document).on('click', '.hist-btn', displayChosenCity);
+// $(document).on('click', '.hist-btn', displayChosenCity);

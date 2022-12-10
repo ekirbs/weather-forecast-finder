@@ -17,7 +17,7 @@ function displayChosenCity() {
 
   $("#feature-spot").empty();
 
-  $('#daily-section').empty();
+  $('#weather-spot').empty();
 
   // var cityName = $(this).attr('data-name');
 
@@ -74,8 +74,9 @@ function displayChosenCity() {
         var count = i;
         console.log(day, count);
   
-        var weatherArticle = $(`<article id="article${count}" class="card zoom">`);
+        var weatherArticle = $(`<article id="article${count}" class="card card-alt zoom">`);
         // var weatherArticle = $(`<article id="article${count}" class="card card-alt zoom">`);
+        $('#weather-spot').append(weatherArticle);
   
         var dateDisplay = $('<h3>').text((dayjs()).add(i + 1, 'day').format('M/D/YYYY'));
         $(`#article${count}`).append(dateDisplay);
@@ -92,18 +93,17 @@ function displayChosenCity() {
         $(`#article${count}`).append(weatherBody);
           
         var temperature = data.list[day + 1].main.temp;          
-        var tempDisplay = $('<p>').text(`Temp: ${temperature}`);          
+        var tempDisplay = $('<p class="card-text">').text(`Temp: ${temperature}`);          
         $(`#weatherBody${count}`).append(tempDisplay);
           
         var windSpeed = data.list[day + 1].wind.speed;          
-        var windDisplay = $('<p>').text(`Wind Speed: ${windSpeed}`);          
+        var windDisplay = $('<p class="card-text">').text(`Wind Speed: ${windSpeed}`);          
         $(`#weatherBody${count}`).append(windDisplay);
           
         var humidity = data.list[day + 1].main.humidity;          
-        var humidDisplay = $('<p>').text(`Humidity: ${humidity}`);          
+        var humidDisplay = $('<p class="card-text">').text(`Humidity: ${humidity}`);          
         $(`#weatherBody${count}`).append(humidDisplay);
           
-        $('#daily-section').append(weatherArticle);
           
       }        
 
@@ -115,7 +115,7 @@ function displayChosenCityFromHistory() {
 
   $("#feature-spot").empty();
 
-  $('#daily-section').empty();
+  $('#weather-spot').empty();
 
   var cityName = $(this).attr('data-name');
 
@@ -174,6 +174,7 @@ function displayChosenCityFromHistory() {
   
         var weatherArticle = $(`<div id="article${count}" class="card card-alt zoom">`);
         console.log(weatherArticle);
+        $('#weather-spot').append(weatherArticle);
         // var weatherArticle = $(`<article id="article${count}" class="card card-alt zoom">`);
   
         var dateDisplay = $('<h3>').text((dayjs()).add(i + 1, 'day').format('M/D/YYYY'));
@@ -208,7 +209,6 @@ function displayChosenCityFromHistory() {
         $(`#weatherBody${count}`).append(humidDisplay);
         console.log(humidity, humidDisplay);
           
-        $('#weather-spot').append(weatherArticle);
           
       }        
 
@@ -225,7 +225,7 @@ function renderHistory() {
 
   $('#feature-spot').empty();
 
-  $('#daily-section').empty();
+  $('#weather-spot').empty();
 
   var cities = JSON.parse(localStorage.getItem('cities')) || [];    
     
@@ -270,8 +270,8 @@ $('#search-btn').on('click', function (event) {
     localStorage.setItem("cities", JSON.stringify(cities));
   };
   
-  displayChosenCity();
   renderHistory();
+  displayChosenCity();
 })
 
 $(document).on('click', '.hist-btn', displayChosenCityFromHistory);

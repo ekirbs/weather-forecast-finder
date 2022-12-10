@@ -172,11 +172,13 @@ function displayChosenCityFromHistory() {
         var count = i;
         console.log(day, count);
   
-        var weatherArticle = $(`<article id="article${count}" class="card zoom">`);
+        var weatherArticle = $(`<div id="article${count}" class="card card-alt zoom">`);
+        console.log(weatherArticle);
         // var weatherArticle = $(`<article id="article${count}" class="card card-alt zoom">`);
   
         var dateDisplay = $('<h3>').text((dayjs()).add(i + 1, 'day').format('M/D/YYYY'));
         $(`#article${count}`).append(dateDisplay);
+        console.log(dateDisplay);
           
         // var icon2 = data.list[day + 1].weather[0].icon
         // console.log(icon2)
@@ -185,23 +187,28 @@ function displayChosenCityFromHistory() {
         // $('#incon').attr('src', iconURL2);
         var weatherImg = $(`<img src="http://openweathermap.org/img/w/${data.list[day + 1].weather[0].icon}.png" id="icon">`)
         $(`#article${count}`).append(weatherImg);
+        console.log(weatherImg);
   
         var weatherBody = $(`<div id="weatherBody${count}" class="card-body">`)
         $(`#article${count}`).append(weatherBody);
+        console.log(weatherBody);
           
         var temperature = data.list[day + 1].main.temp;          
-        var tempDisplay = $('<p>').text(`Temp: ${temperature}`);          
+        var tempDisplay = $('<p class="card-text">').text(`Temp: ${temperature}`);          
         $(`#weatherBody${count}`).append(tempDisplay);
+        console.log( temperature, tempDisplay);
           
         var windSpeed = data.list[day + 1].wind.speed;          
-        var windDisplay = $('<p>').text(`Wind Speed: ${windSpeed}`);          
+        var windDisplay = $('<p class="card-text">').text(`Wind Speed: ${windSpeed}`);          
         $(`#weatherBody${count}`).append(windDisplay);
+        console.log (windSpeed, windDisplay);
           
         var humidity = data.list[day + 1].main.humidity;          
-        var humidDisplay = $('<p>').text(`Humidity: ${humidity}`);          
+        var humidDisplay = $('<p class="card-text">').text(`Humidity: ${humidity}`);          
         $(`#weatherBody${count}`).append(humidDisplay);
+        console.log(humidity, humidDisplay);
           
-        $('#daily-section').append(weatherArticle);
+        $('#weather-spot').append(weatherArticle);
           
       }        
 

@@ -126,7 +126,7 @@ figure img {
   grid-template-columns: repeat(5, 1fr);
   grid-gap: 0.5em;
   grid-template-areas:
-    "main main maim main main"
+    "main main main main main"
     "alt alt alt alt alt alt";
 }
 

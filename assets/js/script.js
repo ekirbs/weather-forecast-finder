@@ -147,7 +147,7 @@ $('#search-btn').on('click', function (event) {
     cities.push(cityName);
     console.log(cities);
     
-    if (cities.length > 5) {
+    if (cities.length > 5) {  
       cities.sort();
     };
 
@@ -159,3 +159,9 @@ $('#search-btn').on('click', function (event) {
 })
 
 $(document).on('click', '.hist-btn', displayChosenCity);
+
+
+// 5-day still doesn't display with this technique, got it to display without trying to append appearance
+// issue with the history buttons linking to the choices
+// the icons aren't appearing correctly
+// this is what you get for trying new techniques instead of easier ones!

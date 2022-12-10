@@ -12,10 +12,12 @@ function init() {
 
 init();
 
-function displayChosenCity() {
-
+function displayChosenCity() {  // removed event focus
+  // event.preventDefault();
 
   $("#feature-spot").empty();
+
+  // $('#daily-section').empty();
 
   var cityName = $("#search-input").val().trim();
   var apiURL = `https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${apiKey}&units=${units}&lang=${lang}`;
@@ -34,8 +36,7 @@ function displayChosenCity() {
         
       var icon = data.list[0].weather[0].icon
       var featureImg = $(`<div id="icon"><img id="wicon" src="${icon}" alt="Weather icon">`)
-      var iconURL = `https://openweathermap.org/img/w/"${icon}.png`;
-      $('#incon').attr('src', iconURL);
+      // var featureImg = $('<img src="./assets/images/sunny-day.png" class="card-img-top" alt="Shining sun icon.">');
       featureCard.append(featureImg);
         
       var featureBody = $('<div class="card-body">');
@@ -60,17 +61,17 @@ function displayChosenCity() {
         var day = i * 8;
         var count = i;
   
-        var weatherArticle = $(`<article id="article${count}" class="card zoom">`);
-        // var weatherArticle = $(`<article id="article${count}" class="card card-alt zoom">`);
+        var weatherArticle = $(`<article id="article${count}" class="card card-alt zoom">`);
   
+        // var weatherDiv = $('<div class="container weather-spot">');
+  
+        // var weatherCard = $("<div class='weather-card'>");
+          
         var dateDisplay = $('<h3>').text((dayjs()).add(i + 1, 'day').format('M/D/YYYY'));
         $(`#article${count}`).append(dateDisplay);
           
-        var icon2 = data.list[day + 1].weather[0].icon
-        console.log(icon2)
-        var weatherImg = $(`<div id="icon"><img id="wicon" src="${icon2}" alt="Weather icon">`)
-        var iconURL2 = `https://openweathermap.org/img/w/"${icon2}.png`;
-        $('#incon').attr('src', iconURL2);
+        var icon = data.list[day + 1].weather[0].icon
+        // var weatherImg = $('<img src="./assets/images/rainy-day.png" class="card-img-top" alt="Rainy clouds icon.">')
         $(`#article${count}`).append(weatherImg);
   
         var weatherBody = $(`<div id="weatherBody${count}" class="card-body">`)
@@ -88,6 +89,8 @@ function displayChosenCity() {
         var humidDisplay = $('<p>').text(`Humidity: ${humidity}`);          
         $(`weatherBody${count}`).append(humidDisplay);
           
+        // $(`#article${count}`).append(weatherCard);
+        // $('.card-alt').append(weatherDiv);
         $('#daily-section').append(weatherArticle);
           
       }        

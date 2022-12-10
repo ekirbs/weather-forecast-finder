@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="Description" content="Enter your description here" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+
+    <title>Weather Forecast Finder</title>
+
+  </head>
+  <body>
+    <!-- HEADER & TIME DISPLAY -->
+    <header class="p-5 mb-4 border-5 border-bottom border-dark text-center">
+      <h1 class="display-3">Weather Forecast Finder</h1>
+      <p class="lead">A simple weather app for checking the weather forecast in a city.</p>
+      <p id="currentDay" class="lead"></p>
+      <!-- change text and link time -->
+    </header>
+
+    <figure>
+      <img src="./assets/images/sunset-art-background.jpg" alt="Art of sun setting in a valley."/>
+    </figure>
+
+    <main class="main-content">
+      <!-- ABOUT ME SECTION -->
+      <section class="section-label city-search">
+        <form>
+          <div>
+            <h1>City Search</h1>
+            <label for="search-input" class="form-label">Search for a City:</label>
+            <input type="text" class="form-control" id="search-input" />
+          </div>
+          <button type="submit" class="btn btn-primary search-btn" id="search-btn" >Submit</button>
+        </form>
+      </section>
+
+      <!-- CURRENT WEATHER -->
+      <section class="feature-section">
+        <div class="container col-9">
+          <div id="feature-spot"></div>
+        </div>    
+      </section>
+
+      <!-- HISTORY SECTION -->
+      <section class="section-label history-section">
+        <div class="container col-3">
+          <div id="history-spot"></div>
+        </div>
+      </section>
+
+      <!-- 5-DAY FORECAST SECTION -->
+      <section id="daily-section" class="dailly-section">
+
+      </section>
+
+      <!-- CONTACT ME SECTION -->
+      <!-- <section class="section-label contact-me-header">
+        <h2>Contact Me</h2>
+      </section>
+
+      <section id="contact-me" class="contact-me-section">
+        
+      </section> -->
+
+    </main>
+
+    <!-- <div class="row">
+
+      <form class=" ms-3 mb-3 col-3">
+        <div>
+          <h1>City Search</h1>
+          <label for="search-input" class="form-label">Search for a City:</label>
+          <input type="text" class="form-control" id="search-input" />
+        </div>
+        <button type="submit" class="btn btn-primary" id="search-btn" >Submit</button>
+      </form>
+
+      <div class="container col-9">
+        <div id="feature-spot"></div>
+      </div>
+
+    </div>
+
+    <div class="row">
+
+      <div class="container col-3">
+        <div id="history-spot"></div>
+      </div>
+
+      <div class="grid-container col-9">
+        <div id="weather-spot"></div>
+      </div>
+
+    </div> -->
+
+    <footer></footer>
+
+    <!-- <script src="jquery-3.6.1.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js" integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js" integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U=" crossorigin="anonymous"></script>
+    <script src="./assets/js/script.js"></script>
+    
+  </body>
+</html>

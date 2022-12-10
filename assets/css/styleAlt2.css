@@ -136,7 +136,7 @@ figure img {
 .main-content {
   display: grid;
   grid-template-columns: 15% 85%;
-  grid-template-rows: 50% 75%;
+  grid-template-rows: 50% 100%;
   grid-gap: 1em;
   margin: 1em;
 }
@@ -193,22 +193,22 @@ figure img {
   overflow: hidden;
 }
 
-/* .card-main {
+.card-main {
   width: 0;
   height: 0;
   margin: 2px;
   min-width: 100%;
   min-height: 100%;
   grid-area: 1 / 1 / span 1 / span 5;
-} */
+}
 
-/* .card-alt {
+.card-alt {
   width: 0;
   height: 0;
   margin: 2px;
   min-width: 100%;
   min-height: 100%;
-} */
+}
 
 a:hover {
   opacity: 100%;
@@ -225,6 +225,14 @@ a:hover {
 /* || VIEWPORT RESIZING */
 
 @media screen and (max-width: 768px) {
+
+  .long-name {
+    display: none;
+  }
+
+  .period {
+    display: inline;
+  }
 
   .dropdown {
     float: left;

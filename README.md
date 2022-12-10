@@ -22,9 +22,7 @@ N/A
 
 ## Usage
 
-Provide instructions and examples for use. Include screenshots as needed.
-
-To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative filepath, add it to your README using the following syntax:
+The current day and time is displayed in the header at the top.  Below the image, a city name can be entered into the input field and when the button is pressed or the enter key is hit, the current weather will be shown, along with the five-day forecast.  The past 5 search inputs will be saved, and can be pressed to recieve the weather information.
 
 ![Tutorial GIF.](./assets/images/tutor-gif.gif)
 

@@ -17,6 +17,8 @@ function displayChosenCity() {
 
   $("#feature-spot").empty();
 
+  $('#daily-section').empty();
+
   var cityName = $("#search-input").val().trim();
   var apiURL = `https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${apiKey}&units=${units}&lang=${lang}`;
 
@@ -28,8 +30,12 @@ function displayChosenCity() {
       console.log(data);
 
       var featureCard = $("<div class='card feature-card'>");
+
+      var name = data.city.name;
+      var city = $('<h1>').text(name);
+      featureCard.append(city);
         
-      var dateDisplay = $('<h1>').text((dayjs()).format('M/D/YYYY'));    
+      var dateDisplay = $('<h2>').text((dayjs()).format('M/D/YYYY'));    
       featureCard.append(dateDisplay);
         
       var icon = data.list[0].weather[0].icon
@@ -59,6 +65,7 @@ function displayChosenCity() {
           
         var day = i * 8;
         var count = i;
+        console.log(day, count);
   
         var weatherArticle = $(`<article id="article${count}" class="card zoom">`);
         // var weatherArticle = $(`<article id="article${count}" class="card card-alt zoom">`);
@@ -78,15 +85,15 @@ function displayChosenCity() {
           
         var temperature = data.list[day + 1].main.temp;          
         var tempDisplay = $('<p>').text(`Temp: ${temperature}`);          
-        $(`weatherBody${count}`).append(tempDisplay);
+        $(`#weatherBody${count}`).append(tempDisplay);
           
         var windSpeed = data.list[day + 1].wind.speed;          
         var windDisplay = $('<p>').text(`Wind Speed: ${windSpeed}`);          
-        $(`weatherBody${count}`).append(windDisplay);
+        $(`#weatherBody${count}`).append(windDisplay);
           
         var humidity = data.list[day + 1].main.humidity;          
         var humidDisplay = $('<p>').text(`Humidity: ${humidity}`);          
-        $(`weatherBody${count}`).append(humidDisplay);
+        $(`#weatherBody${count}`).append(humidDisplay);
           
         $('#daily-section').append(weatherArticle);
           

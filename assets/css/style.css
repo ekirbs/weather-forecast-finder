@@ -75,7 +75,7 @@ header img {
   text-decoration: none;
 }
 
-.dropdown {
+/* .dropdown {
   float: right;
   overflow: hidden;
 }
@@ -89,10 +89,10 @@ header img {
   background-color: inherit;
   font-family: inherit;
   margin: 0;
-}
+} */
 
 /* .navbar a:hover, */
-.dropdown:hover .dropbtn {
+/* .dropdown:hover .dropbtn {
   background-color: var(--dark-highlight);
   color: var(--light-background);
 }
@@ -121,7 +121,7 @@ header img {
 
 .dropdown:hover .dropdown-content {
   display: block;
-}
+} */
 
 /* || BACKGROUND IMAGE */
 

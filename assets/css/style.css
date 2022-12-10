@@ -75,54 +75,6 @@ header img {
   text-decoration: none;
 }
 
-/* .dropdown {
-  float: right;
-  overflow: hidden;
-}
-
-.dropdown .dropbtn {
-  font-size: 16px;
-  border: none;
-  outline: none;
-  color: var(--dark-highlight);
-  padding: 14px 16px;
-  background-color: inherit;
-  font-family: inherit;
-  margin: 0;
-} */
-
-/* .navbar a:hover, */
-/* .dropdown:hover .dropbtn {
-  background-color: var(--dark-highlight);
-  color: var(--light-background);
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: var(--light-background);
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px var(--dark-highlight);
-  z-index: 1;
-}
-
-.dropdown-content a {
-  float: none;
-  color: var(--dark-highlight);
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  text-align: left;
-}
-
-.dropdown-content a:hover {
-  background-color: var(--dark-highlight);
-}
-
-.dropdown:hover .dropdown-content {
-  display: block;
-} */
-
 /* || BACKGROUND IMAGE */
 
 figure img {
@@ -155,10 +107,8 @@ figure img {
   font-size: 2vw;
   border-right: 6px solid var(--dark-highlight);
   display: flex;
-  /* justify-content: center; */
   align-items: flex-start;
   text-align: center;
-  /* text-decoration: underline var(--yellow-highlight); */
 }
 
 /* HISTORY SECTION */

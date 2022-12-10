@@ -38,7 +38,8 @@ function displayChosenCity() {
       var dateDisplay = $('<h2>').text((dayjs()).format('M/D/YYYY'));    
       featureCard.append(dateDisplay);
         
-      var icon = data.list[0].weather[0].icon
+      var icon = data.list[0].weather.icon
+      // var icon = data.list[0].weather[0].icon
       var featureImg = $(`<div id="icon"><img id="wicon" src="${icon}" alt="Weather icon">`)
       var iconURL = `https://openweathermap.org/img/w/"${icon}.png`;
       $('#incon').attr('src', iconURL);

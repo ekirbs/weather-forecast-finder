@@ -1,7 +1,9 @@
+// GLOBAL VARIABLES
 var apiKey = "3044316f6126db93462603440b6cd43c";
 var units = 'imperial';
 var lang = 'en';
 
+// TIME & SEARCH HISTORY DISPLAY FUNCTION ON PAGE LOAD
 function init() {
   setInterval(function() {
     $('#currentDay').text((dayjs()).format('dddd MMM, YYYY [-] h:mm:ss a'));
@@ -12,14 +14,12 @@ function init() {
 
 init();
 
+// WEATHER DISPLAY FUNCTION
 function displayChosenCity() {
-
 
   $("#feature-spot").empty();
 
   $('#weather-spot').empty();
-
-  // var cityName = $(this).attr('data-name');
 
   var cityName = $("#search-input").val().trim();
   var apiURL = `https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${apiKey}&units=${units}&lang=${lang}`;
@@ -40,13 +40,6 @@ function displayChosenCity() {
       var dateDisplay = $('<h2>').text((dayjs()).format('M/D/YYYY'));    
       featureCard.append(dateDisplay);
         
-      // var icon = data.list[0].weather.icon
-      // var icon = data.list[0].weather[0].icon
-      // var featureImg = $(`<img id="wicon" src="${icon}" alt="Weather icon">`)
-      // var featureImg = $(`<div id="icon"><img id="wicon" src="${icon}" alt="Weather icon">`)
-      // var iconURL = `https://openweathermap.org/img/w/"${icon}.png`;
-      // $('#icon').src = `http://openweathermap.org/img/w/${d.weather[0].icon}.png`;
-      // $('#incon').attr('src', iconURL);
       var featureImg = $(`<img src="http://openweathermap.org/img/w/${data.list[0].weather[0].icon}.png" id="icon">`)
       featureCard.append(featureImg);
         
@@ -64,10 +57,10 @@ function displayChosenCity() {
       var humidity = data.list[0].main.humidity;      
       var humidDisplay = $('<p class="card-text">').text(`Humidity: ${humidity}`);
       featureBody.append(humidDisplay);
-        
-      // $('#daily-section').prepend(featureCard);
+     
       $('#feature-spot').prepend(featureCard);
 
+      // 5 DAY WEATHER DISPLAY LOOP
       for (var i = 0; i < 5; i += 1) {
           
         var day = i * 8;
@@ -75,17 +68,12 @@ function displayChosenCity() {
         console.log(day, count);
   
         var weatherArticle = $(`<article id="article${count}" class="card card-alt zoom">`);
-        // var weatherArticle = $(`<article id="article${count}" class="card card-alt zoom">`);
+      
         $('#weather-spot').append(weatherArticle);
   
         var dateDisplay = $('<h3>').text((dayjs()).add(i + 1, 'day').format('M/D/YYYY'));
         $(`#article${count}`).append(dateDisplay);
-          
-        // var icon2 = data.list[day + 1].weather[0].icon
-        // console.log(icon2)
-        // var weatherImg = $(`<div id="icon"><img id="wicon" src="${icon2}" alt="Weather icon">`)
-        // var iconURL2 = `https://openweathermap.org/img/w/"${icon2}.png`;
-        // $('#incon').attr('src', iconURL2);
+       
         var weatherImg = $(`<img src="http://openweathermap.org/img/w/${data.list[day + 1].weather[0].icon}.png" id="icon">`)
         $(`#article${count}`).append(weatherImg);
   
@@ -103,13 +91,12 @@ function displayChosenCity() {
         var humidity = data.list[day + 1].main.humidity;          
         var humidDisplay = $('<p class="card-text">').text(`Humidity: ${humidity}`);          
         $(`#weatherBody${count}`).append(humidDisplay);
-          
-          
+            
       }        
-
     })
 };
 
+// WEATHER DISPLAY FROM HISTORY FUNCTION
 function displayChosenCityFromHistory() {
 
 
@@ -119,7 +106,6 @@ function displayChosenCityFromHistory() {
 
   var cityName = $(this).attr('data-name');
 
-  // var cityName = $("#search-input").val().trim();
   var apiURL = `https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${apiKey}&units=${units}&lang=${lang}`;
 
   fetch(apiURL)
@@ -138,13 +124,6 @@ function displayChosenCityFromHistory() {
       var dateDisplay = $('<h2>').text((dayjs()).format('M/D/YYYY'));    
       featureCard.append(dateDisplay);
         
-      // var icon = data.list[0].weather.icon
-      // var icon = data.list[0].weather[0].icon
-      // var featureImg = $(`<img id="wicon" src="${icon}" alt="Weather icon">`)
-      // var featureImg = $(`<div id="icon"><img id="wicon" src="${icon}" alt="Weather icon">`)
-      // var iconURL = `https://openweathermap.org/img/w/"${icon}.png`;
-      // $('#icon').src = `http://openweathermap.org/img/w/${d.weather[0].icon}.png`;
-      // $('#incon').attr('src', iconURL);
       var featureImg = $(`<img src="http://openweathermap.org/img/w/${data.list[0].weather[0].icon}.png" id="icon">`)
       featureCard.append(featureImg);
         
@@ -163,7 +142,6 @@ function displayChosenCityFromHistory() {
       var humidDisplay = $('<p class="card-text">').text(`Humidity: ${humidity}`);
       featureBody.append(humidDisplay);
         
-      // $('#daily-section').prepend(featureCard);
       $('#feature-spot').prepend(featureCard);
 
       for (var i = 0; i < 5; i += 1) {
@@ -175,17 +153,11 @@ function displayChosenCityFromHistory() {
         var weatherArticle = $(`<div id="article${count}" class="card card-alt zoom">`);
         console.log(weatherArticle);
         $('#weather-spot').append(weatherArticle);
-        // var weatherArticle = $(`<article id="article${count}" class="card card-alt zoom">`);
   
         var dateDisplay = $('<h3>').text((dayjs()).add(i + 1, 'day').format('M/D/YYYY'));
         $(`#article${count}`).append(dateDisplay);
         console.log(dateDisplay);
-          
-        // var icon2 = data.list[day + 1].weather[0].icon
-        // console.log(icon2)
-        // var weatherImg = $(`<div id="icon"><img id="wicon" src="${icon2}" alt="Weather icon">`)
-        // var iconURL2 = `https://openweathermap.org/img/w/"${icon2}.png`;
-        // $('#incon').attr('src', iconURL2);
+        
         var weatherImg = $(`<img src="http://openweathermap.org/img/w/${data.list[day + 1].weather[0].icon}.png" id="icon">`)
         $(`#article${count}`).append(weatherImg);
         console.log(weatherImg);
@@ -209,16 +181,17 @@ function displayChosenCityFromHistory() {
         $(`#weatherBody${count}`).append(humidDisplay);
         console.log(humidity, humidDisplay);
           
-          
       }        
 
     })
 };
 
+// GET LOCALSTORAGE OF SEARCH HISTORY FUNCTION
 function getLocalStorage() {
   return JSON.parse(localStorage.getItem("cities")) || [];
 };
 
+// RENDER SEARCH HISTORY FUNCTION
 function renderHistory() {
       
   $('#history-spot').empty();
@@ -244,6 +217,7 @@ function renderHistory() {
   }
 };
 
+// ON BUTTON CLICK, ADD SEARCHED CITIES TO HISTORY AND RENDER HISTORY & WEATHER
 $('#search-btn').on('click', function (event) {
           
   event.preventDefault();
@@ -274,10 +248,5 @@ $('#search-btn').on('click', function (event) {
   displayChosenCity();
 })
 
+// WEATHER DDISPLAY WHEN SEARCH HISTORY IS CLICKED
 $(document).on('click', '.hist-btn', displayChosenCityFromHistory);
-
-
-// 5-day still doesn't display with this technique, got it to display without trying to append appearance
-// issue with the history buttons linking to the choices
-// the icons aren't appearing correctly
-// this is what you get for trying new techniques instead of easier ones!

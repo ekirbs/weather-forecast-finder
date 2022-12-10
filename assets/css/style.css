@@ -33,53 +33,20 @@ header {
   z-index: 100;
   display: block;
   align-items: center;
-  /* justify-content: center; */
   padding: 20px;
 }
 
 header h1 {
   display: inline-block;
-  font-size: 36px;
+  font-size: 32px;
   text-decoration: underline var(--yellow-highlight);
   margin-left: 20px;
-  height: 32px;
+  height: 28px;
 }
 
 header p {
-  height: 18px;
+  height: 16px;
 }
-
-/* .period {
-  display: none;
-} */
-
-/* header img {
-  margin-right: 20px;
-  height: 75px;
-  width: auto;
-  border: 2px solid var(--white);
-} */
-
-/* || NAVIGATION BAR */
-
-/* .navbar {
-  position: sticky;
-  width: 100%;
-  min-height: 25px;
-  max-height: 50px;
-  background-color: var(--light-background);
-  z-index: 100;
-  border-bottom: 1px solid var(--dark-highlight);
-} */
-
-/* header a {
-  float: left;
-  font-size: 16px;
-  color: var(--white);
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-} */
 
 /* || BACKGROUND IMAGE */
 
@@ -117,24 +84,13 @@ figure img {
   text-align: center;
 }
 
-/* HISTORY SECTION */
+/* || HISTORY SECTION */
 
 #history-section {
   display: block;
 }
 
 /* || DAILY SECTION */
-
-/* #daily-weather {
-  display: inline;
-  display: grid;
-  grid-template-rows: 1fr 1fr;
-  grid-template-columns: repeat(5, 1fr);
-  grid-gap: 0.5em;
-  grid-template-areas:
-    "main main main main main"
-    "alt alt alt alt alt alt";
-} */
 
 .card {
   height: 100%;
@@ -180,25 +136,8 @@ a:hover {
 
 @media screen and (max-width: 768px) {
 
-  /* .dropdown {
-    float: left;
-  } */
-
-  /* .main-content {
-    grid-template-rows: 33% 75%;
-  } */
-
   .section-label h2 {
-    /* writing-mode: vertical-lr; */
-    /* text-orientation: upright; */
     font-size: 80%;
   }
 
 };
-
-/* @media screen and (max-width: 345px) {
-
-  .main-content {
-    grid-template-rows: 40% 75%;
-  }
-}; */

@@ -22,7 +22,7 @@ N/A
 
 ## Usage
 
-The current day and time is displayed in the header at the top.  Below the image, a city name can be entered into the input field and when the button is pressed or the enter key is hit, the current weather will be shown, along with the five-day forecast.  The past search inputs will be saved, and can be pressed to recieve the weather information.
+The current day and time is displayed in the header at the top.  Below the image, a city name can be entered into the input field and when the button is pressed or the enter key is hit, the current weather will be shown, along with the five-day forecast.  The past search inputs will be saved, and can be pressed to receive the weather information as well.
 
 ![Tutorial GIF.](./assets/images/tutor-gif.gif)
 

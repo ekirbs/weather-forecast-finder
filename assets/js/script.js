@@ -226,8 +226,6 @@ $('#search-btn').on('click', function (event) {
   
   console.log(cities);
  
-  var cities = getLocalStorage();
-  console.log(cities);
   var cityName = $("#search-input").val().trim();
   console.log(cityName);
   

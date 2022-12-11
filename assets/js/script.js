@@ -228,20 +228,24 @@ $('#search-btn').on('click', function (event) {
  
   var cityName = $("#search-input").val().trim();
   console.log(cityName);
-  
-  if (cities.includes(cityName)) {
-    console.log("already chosen");
+
+  if(cityName === "") {
+    alert('Please choose a city');
   } else {
-    cities.push(cityName);
-    console.log(cities);
+
+    if (cities.includes(cityName)) {
+      console.log("already chosen");
+    } else {
+      cities.push(cityName);
+      console.log(cities);
     
-    if (cities.length > 5) {  
-      cities.sort();
-    };
+      if (cities.length > 5) {  
+        cities.sort();
+      };
 
     localStorage.setItem("cities", JSON.stringify(cities));
+    }
   };
-  
   renderHistory();
   displayChosenCity();
 })

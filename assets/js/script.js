@@ -99,7 +99,6 @@ function displayChosenCity() {
 // WEATHER DISPLAY FROM HISTORY FUNCTION
 function displayChosenCityFromHistory() {
 
-
   $("#feature-spot").empty();
 
   $('#weather-spot').empty();
@@ -240,7 +239,7 @@ $('#search-btn').on('click', function (event) {
       console.log(cities);
     
       if (cities.length > 5) {  
-        cities.sort();
+        cities.shift();
       };
 
     localStorage.setItem("cities", JSON.stringify(cities));
@@ -250,5 +249,5 @@ $('#search-btn').on('click', function (event) {
   displayChosenCity();
 })
 
-// WEATHER DDISPLAY WHEN SEARCH HISTORY IS CLICKED
+// WEATHER DISPLAY WHEN SEARCH HISTORY IS CLICKED
 $(document).on('click', '.hist-btn', displayChosenCityFromHistory);

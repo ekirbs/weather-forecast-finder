@@ -29,7 +29,7 @@ function displayChosenCity() {
       return response.json();
     })
     .then(function (data) {
-      console.log(data);
+      // console.log(data);
 
       var featureCard = $("<div class='card feature-card zoom'>");
 
@@ -65,7 +65,7 @@ function displayChosenCity() {
           
         var day = i * 8;
         var count = i;
-        console.log(day, count);
+        // console.log(day, count);
   
         var weatherArticle = $(`<article id="article${count}" class="card card-alt zoom">`);
       
@@ -112,7 +112,7 @@ function displayChosenCityFromHistory() {
       return response.json();
     })
     .then(function (data) {
-      console.log(data);
+      // console.log(data);
 
       var featureCard = $("<div class='card feature-card zoom'>");
 
@@ -147,41 +147,32 @@ function displayChosenCityFromHistory() {
           
         var day = i * 8;
         var count = i;
-        console.log(day, count);
+        // console.log(day, count);
   
         var weatherArticle = $(`<div id="article${count}" class="card card-alt zoom">`);
-        console.log(weatherArticle);
         $('#weather-spot').append(weatherArticle);
   
         var dateDisplay = $('<h3>').text((dayjs()).add(i + 1, 'day').format('M/D/YYYY'));
         $(`#article${count}`).append(dateDisplay);
-        console.log(dateDisplay);
         
         var weatherImg = $(`<img src="http://openweathermap.org/img/w/${data.list[day + 1].weather[0].icon}.png" id="icon">`)
         $(`#article${count}`).append(weatherImg);
-        console.log(weatherImg);
   
         var weatherBody = $(`<div id="weatherBody${count}" class="card-body">`)
         $(`#article${count}`).append(weatherBody);
-        console.log(weatherBody);
           
         var temperature = data.list[day + 1].main.temp;          
         var tempDisplay = $('<p class="card-text">').text(`Temp: ${temperature}`);          
         $(`#weatherBody${count}`).append(tempDisplay);
-        console.log( temperature, tempDisplay);
           
         var windSpeed = data.list[day + 1].wind.speed;          
         var windDisplay = $('<p class="card-text">').text(`Wind Speed: ${windSpeed}`);          
         $(`#weatherBody${count}`).append(windDisplay);
-        console.log (windSpeed, windDisplay);
           
         var humidity = data.list[day + 1].main.humidity;          
         var humidDisplay = $('<p class="card-text">').text(`Humidity: ${humidity}`);          
-        $(`#weatherBody${count}`).append(humidDisplay);
-        console.log(humidity, humidDisplay);
-          
+        $(`#weatherBody${count}`).append(humidDisplay);          
       }        
-
     })
 };
 
@@ -223,20 +214,20 @@ $('#search-btn').on('click', function (event) {
         
   var cities = getLocalStorage();
   
-  console.log(cities);
+  // console.log(cities);
  
   var cityName = $("#search-input").val().trim();
-  console.log(cityName);
+  // console.log(cityName);
 
   if(cityName === "") {
     alert('Please choose a city');
   } else {
 
     if (cities.includes(cityName)) {
-      console.log("already chosen");
+      // console.log("already chosen");
     } else {
       cities.push(cityName);
-      console.log(cities);
+      // console.log(cities);
     
       if (cities.length > 5) {  
         cities.shift();
